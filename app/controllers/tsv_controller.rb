@@ -18,13 +18,10 @@ class TsvController < ApplicationController
         purchaser = Purchaser.find_or_create_by name: row_hash[:purchaser_name]
         product = Product.find_or_create_by description: row_hash[:item_description], price: row_hash[:item_price]
         merchant = Merchant.find_or_create_by address: row_hash[:merchant_address], name: row_hash[:merchant_name]
-        logger.debug purchaser.inspect
-        logger.debug product.inspect
-        logger.debug merchant.inspect
         line_item = LineItem.create(purchaser: purchaser, product: product, merchant: merchant, order: order, quantity: row_hash[:purchase_count])
       end
       redirect_to root_url, notice: "Imported file with a gross revenue of #{format("$%.2f",order.total)}" and return
     end
-    redirect_to root_url, error: "You must select a file to upload!"
+    redirect_to root_url, :flash => { :error => "You must select a file to upload!" }
   end
 end
