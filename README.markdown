@@ -1,4 +1,38 @@
-# Challenge for Software Engineer - Big Data 
+# Instructions for setting up and running this application
+
+## Minimum Requirements
+It will be assumed you have the following installed:
+1. Ruby 2.1
+2. Rails 4.0.2
+3. RVM
+4. Bundler
+5. Sqlite
+
+## Setting up and running the application
+All of the following instructions assume you are in the project root in a shell session
+1. Install the necessary Ruby Gems
+```
+bundle install
+```
+2. Create a secret key
+```
+rake secret
+```
+3. Copy that key into an environment variable
+```
+export SECRET_KEY_BASE=(secret key from previous step)
+```
+4. Create the database
+```
+rake db:reset
+```
+5. Start the application
+```
+rails s
+```
+6. Open your browser to http://localhost:3000 and enjoy!
+
+# Challenge for Software Engineer - Big Data
 To better assess a candidates development skills, we would like to provide the following challenge.  You have as much time as you'd like (though we ask that you not spend more than a few hours).
 
 There are three jobs that both use this challenge:
