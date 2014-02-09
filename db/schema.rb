@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140209161652) do
+ActiveRecord::Schema.define(version: 20140209164126) do
 
   create_table "friendly_id_slugs", force: true do |t|
     t.string   "slug",                      null: false
@@ -27,19 +27,19 @@ ActiveRecord::Schema.define(version: 20140209161652) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "line_items", force: true do |t|
-    t.integer  "Purchaser_id"
-    t.integer  "Product_id"
-    t.integer  "Merchant_id"
-    t.integer  "Order_id"
+    t.integer  "purchaser_id"
+    t.integer  "merchant_id"
+    t.integer  "order_id"
+    t.integer  "product_id"
     t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "line_items", ["Merchant_id"], name: "index_line_items_on_Merchant_id"
-  add_index "line_items", ["Order_id"], name: "index_line_items_on_Order_id"
-  add_index "line_items", ["Product_id"], name: "index_line_items_on_Product_id"
-  add_index "line_items", ["Purchaser_id"], name: "index_line_items_on_Purchaser_id"
+  add_index "line_items", ["merchant_id"], name: "index_line_items_on_merchant_id"
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
+  add_index "line_items", ["product_id"], name: "index_line_items_on_product_id"
+  add_index "line_items", ["purchaser_id"], name: "index_line_items_on_purchaser_id"
 
   create_table "merchants", force: true do |t|
     t.string   "address"
