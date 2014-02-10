@@ -12,9 +12,10 @@
 #  updated_at   :datetime
 #
 
-class LineItem < ActiveRecord::Base
-  belongs_to :purchaser
-  belongs_to :merchant
-  belongs_to :order
-  belongs_to :product
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :line_item do
+    quantity 1
+  end
 end

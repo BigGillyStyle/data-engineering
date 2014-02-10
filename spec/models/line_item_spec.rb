@@ -12,9 +12,8 @@
 #  updated_at   :datetime
 #
 
-class LineItem < ActiveRecord::Base
-  belongs_to :purchaser
-  belongs_to :merchant
-  belongs_to :order
-  belongs_to :product
+require 'spec_helper'
+
+describe LineItem do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

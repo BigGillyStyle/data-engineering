@@ -9,6 +9,7 @@ class TsvController < ApplicationController
   # Marty McFly     $20 Sneakers for $5      5.0       1              123 Fake St Sneaker  Store Emporium
   # Snake Plissken  $20 Sneakers for $5      5.0       4              123 Fake St Sneaker  Store Emporium
   def upload
+    Rails.logger.debug params[:file]
     uploaded_file = params[:file].path if params[:file].present?
     if uploaded_file
       order = Order.create

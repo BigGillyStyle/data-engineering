@@ -25,10 +25,12 @@ group :development, :test do
   gem 'rails_layout', '~> 1.0.5'  # Bootstrap 3 layout generator
   gem 'better_errors'
   gem 'rspec-rails', '~> 2.14.1'
+  gem 'factory_girl_rails', '~> 4.3.0'
 end
 
 group :test do
   gem 'capybara', '~> 2.2.1'
+  gem 'database_cleaner', '~> 1.2.0'
 end
 
 # production gems for heroku

@@ -33,6 +33,18 @@ rails s
 ```
 * Open your browser to [http://localhost:3000](http://localhost:3000) and enjoy!
 
+## Running the tests
+This assumes you have already followed the instructions above for setting up the application
+* Create the test database
+```
+rake db:test:clone
+```
+* Run the RSpec tests
+```
+rspec spec
+```
+
+
 # Challenge for Software Engineer - Big Data
 To better assess a candidates development skills, we would like to provide the following challenge.  You have as much time as you'd like (though we ask that you not spend more than a few hours).
 
